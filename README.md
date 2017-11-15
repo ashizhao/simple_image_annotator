@@ -18,7 +18,7 @@ $ python app.py ./images/
 ```
 * you can also specify the file you would like the annotations output to (out.csv is the default)
 ```
-$ python app.py /images/directory --out test.csv
+$ python app.py ./images/ --out test.csv
 ```
 * open http://127.0.0.1:5000/tagger in your browser
     * only tested on Chrome

@@ -107,6 +107,8 @@
         if (!clicked) {
             var x = (image.width / c.scrollWidth) * e.offsetX;
             var y = (image.height / c.scrollHeight) * e.offsetY;
+            var width = image.width
+            var height = image.height
             console.log(e);
             ctx.strokeStyle = "pink";
             ctx.fillStyle = "pink";
@@ -124,6 +126,8 @@
             var xMax;
             var yMin;
             var yMin;
+            var width = image.width
+            var height = image.height
             if (x > fPoint.x) {
                 xMax = x;
                 xMin = fPoint.x;
@@ -143,7 +147,9 @@
             "?xMin=" + xMin +
             "&xMax=" + xMax +
             "&yMin=" + yMin +
-            "&yMax=" + yMax);
+            "&yMax=" + yMax +
+            "&width=" + width +
+            "&height=" + height);
         }
         clicked = !clicked;
       };

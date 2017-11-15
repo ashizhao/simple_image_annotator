@@ -37,7 +37,9 @@ def next():
             str(round(float(label["xMin"]))) + "," +
             str(round(float(label["xMax"]))) + "," +
             str(round(float(label["yMin"]))) + "," +
-            str(round(float(label["yMax"]))) + "\n")
+            str(round(float(label["yMax"]))) + "," +
+            str(round(float(label["width"]))) + "," +
+            str(round(float(label["height"]))) + "\n")
     app.config["LABELS"] = []
     return redirect(url_for('tagger'))
 
@@ -51,7 +53,9 @@ def add(id):
     xMax = request.args.get("xMax")
     yMin = request.args.get("yMin")
     yMax = request.args.get("yMax")
-    app.config["LABELS"].append({"id":id, "name":"", "xMin":xMin, "xMax":xMax, "yMin":yMin, "yMax":yMax})
+    width = request.args.get("width")
+    height = request.args.get("height")
+    app.config["LABELS"].append({"id":id, "name":"", "xMin":xMin, "xMax":xMax, "yMin":yMin, "yMax":yMax, "width":width, "height":height})
     return redirect(url_for('tagger'))
 
 @app.route('/remove/<id>')
@@ -104,5 +108,5 @@ if __name__ == "__main__":
         app.config["OUT"] = args.out
     print(files)
     with open("out.csv",'w') as f:
-        f.write("image,id,name,xMin,xMax,yMin,yMax\n")
+        f.write("image,id,name,xMin,xMax,yMin,yMax,width,height\n")
     app.run(debug="True")

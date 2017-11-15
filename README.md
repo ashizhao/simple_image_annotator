@@ -14,7 +14,7 @@ $ pip install Flask
 * cd into this directory after cloning the repo
 * start the app
 ```
-$ python app.py /images/directory
+$ python app.py ./images/
 ```
 * you can also specify the file you would like the annotations output to (out.csv is the default)
 ```
@@ -32,6 +32,8 @@ $ python app.py /images/directory --out test.csv
     * *xMax* - max x value of the bounding box
     * *yMin* - min y value of the bounding box
     * *yMax* - max y value of the bounding box
+    * *width* - width of the image
+    * *height* - height of the image
 
 ## HOWTOs
 * draw a bounding box
